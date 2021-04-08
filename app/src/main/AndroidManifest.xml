@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="id.airham.demo_start">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demostart">
+        <activity android:name=".MapActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LoginActivity" />
+
+        <!--Developers should put application credentials here.To obtain them, please register the application
+         at https://developer.here.com/develop/mobile-sdks-->
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="TZ8NByZAIg7hVS9MOlqK" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="PLSvHMV69eKtX_T6so8eUA" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="bg7acFuU9yhp0QlvhjpbAZTphZHv2Mo3//Swglbv7jqwgIbiOZ8cC3Ahe63iOMWI9VEXw9vK7vLZ8mTWIqs6SDqc8tqTdl4qB/aSSB+YOVKrljf/Uj+7FeUqrugmOg0fsdLPU6DGFkgtosKRVZBRMnidbPSOKkPfzhzKDEgsH+Ww9E0qtcmwH6xLwVT6IWvaob4fIh258IGhcF1pvQ84Zn1dZ2q07VG7UEOQ7/xVwbVCx/Np6IxHdMtSnsdeSm0C3dIcZssXxqjd//WA61ZmXWEC8fvVIo4as6QkfYcnAc0XxfeXA/g6MsVN9pEpkfm/Qs5W06R0hSpoGJWFHn66bZA3xfWdHWPe+ae5bqaKVWW0y3NFOofmB2/Mva+cVnQGHxs/QUFmEfwQUmpEbnEPy8G2PtB4mFlIiwPOdiVxCG3H7u68S2ycfBLutj/Rb6JNACyKMVC0qVf2HXdZTTpPCmNDNmJj23avb2gpzYdcjTgk/loB+EtE6y+qpJjw0YifJpwYfWpnsUUR9NNol2YArTz4Nf6yWslttob3087sASmWd/kKdu51LRyOFVvXvwA6XKwoAOUZ/pEMjh90Nql1G6fYck6ylx62Hm8A2IQ0WkV279F1K+zHcPlil8tuO7LYuc1qx+0r4A2A1hXOHXXlPqxPsnhNvWEuvOIqoHww2RA=" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Demostart.NoActionBar" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.Demostart.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
