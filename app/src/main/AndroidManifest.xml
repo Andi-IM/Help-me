@@ -24,13 +24,13 @@
          at https://developer.here.com/develop/mobile-sdks-->
         <meta-data
             android:name="com.here.android.maps.appid"
-            android:value="TZ8NByZAIg7hVS9MOlqK" />
+            android:value="aFw23ClzE2EX3AnAATBb" />
         <meta-data
             android:name="com.here.android.maps.apptoken"
-            android:value="PLSvHMV69eKtX_T6so8eUA" />
+            android:value="m9wCc2N9yxaximiIV9g4gg" />
         <meta-data
             android:name="com.here.android.maps.license.key"
-            android:value="bg7acFuU9yhp0QlvhjpbAZTphZHv2Mo3//Swglbv7jqwgIbiOZ8cC3Ahe63iOMWI9VEXw9vK7vLZ8mTWIqs6SDqc8tqTdl4qB/aSSB+YOVKrljf/Uj+7FeUqrugmOg0fsdLPU6DGFkgtosKRVZBRMnidbPSOKkPfzhzKDEgsH+Ww9E0qtcmwH6xLwVT6IWvaob4fIh258IGhcF1pvQ84Zn1dZ2q07VG7UEOQ7/xVwbVCx/Np6IxHdMtSnsdeSm0C3dIcZssXxqjd//WA61ZmXWEC8fvVIo4as6QkfYcnAc0XxfeXA/g6MsVN9pEpkfm/Qs5W06R0hSpoGJWFHn66bZA3xfWdHWPe+ae5bqaKVWW0y3NFOofmB2/Mva+cVnQGHxs/QUFmEfwQUmpEbnEPy8G2PtB4mFlIiwPOdiVxCG3H7u68S2ycfBLutj/Rb6JNACyKMVC0qVf2HXdZTTpPCmNDNmJj23avb2gpzYdcjTgk/loB+EtE6y+qpJjw0YifJpwYfWpnsUUR9NNol2YArTz4Nf6yWslttob3087sASmWd/kKdu51LRyOFVvXvwA6XKwoAOUZ/pEMjh90Nql1G6fYck6ylx62Hm8A2IQ0WkV279F1K+zHcPlil8tuO7LYuc1qx+0r4A2A1hXOHXXlPqxPsnhNvWEuvOIqoHww2RA=" />
+            android:value="hBcVjRBFqYBM9Fcg3LN+m/MtL10/Fg1Y7pK62wt4g4O3UqPsEUYAGcj8wvw3B5ZKRnvX4Z56YC37QzkjpXoFaKzMM8zyyefuk8dXD8pIcGKmIU/NQ/GP/srHlzu83f9PyrKO27l9ORBjpn829qMfy8elyRJH690CUYrBbOLqGZCiZ72njCoSYZE0IHT6vcbZtQn44Xg5oMWYflNDghKl0vvTExv7NvKi+dOZEYM3vPU5dKOIifFF8x5X/rbTf8mUO8B6XqlIqxMopjlqgT9Qg6c0sHtMr+NT78oBrd1gcxQbZ4o+fYFrkSZUWguGkypqNQgck3+nBa4PKRr2fffVV//wOfkZzC3NeDcNKsD9WbFgtvmHdXfM64aDrTs79GoRsf3EFvv66V1V8nKPEO1IZBbQV2S3/EDdrHtZr0umdhVJrLY7x6nQiPB0SZBNg+RH3iW2Rz1bSSXBTUr5eLRzWeaOlvqEZg+qOm2POCQorrXq4rQlg2SOZuYn3Vy7axkyf8LBr1JAFyYbVFhHLyQe1MN79i5lTH6bHzmNlXw29HDsHrlD0BKBSdgIw9I7vo8PpKOSP1U7ad39FAAYHWEhpM3diSfG1qu/drfq3KfXxfiZkXWqFDc3bGSYYF7V3KE9MKBw3zCfMc9mQezhHKhR/aZWBGPLxnA/eJD4f9pua58=" />
 
         <activity
             android:name=".MainActivity"
