@@ -2,15 +2,20 @@ package id.airham.demo_start;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.appcompat.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MapActivity extends AppCompatActivity {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+public class MapActivity extends AppCompatActivity{
+
     private final static int REQUEST_CODE_ASK_PERMISSIONS = 1;
     private static final String[] RUNTIME_PERMISSIONS = {
             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -19,7 +24,6 @@ public class MapActivity extends AppCompatActivity {
             Manifest.permission.ACCESS_WIFI_STATE,
             Manifest.permission.ACCESS_NETWORK_STATE
     };
-    private MapFragmentView m_mapFragmentView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,21 @@ public class MapActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sos_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.item_sos){
+            // showDialog();
+            startActivity(new Intent(this, HomeActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     /**
      * Only when the app's target SDK is 23 or higher, it requests each dangerous permissions it
      * needs when the app is running.
@@ -53,39 +72,36 @@ public class MapActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_PERMISSIONS: {
-                for (int index = 0; index < permissions.length; index++) {
-                    if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
+            for (int index = 0; index < permissions.length; index++) {
+                if (grantResults[index] != PackageManager.PERMISSION_GRANTED) {
 
-                        /*
-                         * If the user turned down the permission request in the past and chose the
-                         * Don't ask again option in the permission request system dialog.
-                         */
-                        if (!ActivityCompat
-                                .shouldShowRequestPermissionRationale(this, permissions[index])) {
-                            Toast.makeText(this, "Required permission " + permissions[index]
-                                            + " not granted. "
-                                            + "Please go to settings and turn on for sample app",
-                                    Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(this, "Required permission " + permissions[index]
-                                    + " not granted", Toast.LENGTH_LONG).show();
-                        }
+                    /*
+                     * If the user turned down the permission request in the past and chose the
+                     * Don't ask again option in the permission request system dialog.
+                     */
+                    if (!ActivityCompat
+                            .shouldShowRequestPermissionRationale(this, permissions[index])) {
+                        Toast.makeText(this, "Required permission " + permissions[index]
+                                        + " not granted. "
+                                        + "Please go to settings and turn on for sample app",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(this, "Required permission " + permissions[index]
+                                + " not granted", Toast.LENGTH_LONG).show();
                     }
                 }
-
-                setupMapFragmentView();
-                break;
             }
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            setupMapFragmentView();
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 
     private void setupMapFragmentView() {
         // All permission requests are being handled. Create map fragment view. Please note
         // the HERE Mobile SDK requires all permissions defined above to operate properly.
-        m_mapFragmentView = new MapFragmentView(this);
+        MapFragmentView m_mapFragmentView = new MapFragmentView(this);
     }
 }
