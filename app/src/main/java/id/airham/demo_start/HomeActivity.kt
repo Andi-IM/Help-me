@@ -36,7 +36,10 @@ class HomeActivity : AppCompatActivity(), AntaresHTTPAPI.OnResponseListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        
+
+        supportActionBar?.title = resources.getString(R.string.sos)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         radioGroup = findViewById(R.id.radio_group)
         btnSubmit = findViewById(R.id.btn_submit)
         btnRefresh = findViewById(R.id.btn_refresh)
@@ -49,16 +52,14 @@ class HomeActivity : AppCompatActivity(), AntaresHTTPAPI.OnResponseListener {
         antaresAPIHTTP.addListener(this)
         
         btnRefresh.setOnClickListener{
-            View.OnClickListener {
-                antaresAPIHTTP.getLatestDataofDevice(
+            antaresAPIHTTP.getLatestDataofDevice(
                     PRIVATE_KEY,
                     APP_NAME,
                     DEVICE_NAME
-                )
-            }
+            )
         }
 
-        btnSubmit.setOnClickListener { v: View? ->
+        btnSubmit.setOnClickListener {
             val id = radioGroup.getCheckedRadioButtonId()
             when (id) {
                 R.id.fire -> antaresAPIHTTP.storeDataofDevice(
